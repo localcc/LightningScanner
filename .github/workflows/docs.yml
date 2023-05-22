@@ -1,0 +1,33 @@
+name: Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+
+    - name: Install dependencies
+      run: |
+        pip install sphinx breathe exhale furo
+        sudo apt-get install -y doxygen
+
+    - name: Build docs
+      run: |
+        sphinx-build docs _docbuild
+        cd _docbuild
+        touch .nojekyll
+    
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: _docbuild/
+        single-commit: true
+
