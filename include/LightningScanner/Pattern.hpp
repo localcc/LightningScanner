@@ -71,7 +71,7 @@ struct Pattern {
             ++i;
         }
 
-        size_t count = std::ceil((float)data.size() / Alignment);
+        size_t count = (size_t)std::ceil((float)data.size() / Alignment);
         size_t paddingSize = count * Alignment - data.size();
 
         for (size_t i = 0; i < paddingSize; i++) {

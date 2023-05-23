@@ -1,5 +1,5 @@
 #include <LightningScanner/backends/Avx2.hpp>
-#include <intrin.h>
+#include <immintrin.h>
 
 namespace LightningScanner {
 

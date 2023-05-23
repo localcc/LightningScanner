@@ -64,6 +64,15 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
       }
+    },
+    {
+      "name": "x86-relWithDebInfo",
+      "displayName": "x86 RelWithDebInfo + Tests",
+      "inherits": "x86-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "LIGHTNING_SCANNER_BUILD_TESTS": "ON"
+      }
     }
   ]
 }

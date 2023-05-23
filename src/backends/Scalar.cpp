@@ -1,5 +1,4 @@
 #include <LightningScanner/backends/Sse42.hpp>
-#include <intrin.h>
 
 namespace LightningScanner {
 
