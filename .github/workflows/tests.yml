@@ -1,0 +1,66 @@
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        compiler: [ {cxx: clang++, c: clang}, {cxx: g++, c: gcc}, {cxx: cl, c: cl} ]
+        arch: [{msvc: 86, gcc: 32}, {msvc: 64, gcc: 64}]
+        exclude:
+          - os: windows-latest
+            compiler: {cxx: g++, c: gcc}
+          - os: ubuntu-latest
+            compiler: {cxx: cl, c: cl}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure env (linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build gcc-multilib g++-multilib
+
+      - name: Configure env (windows)
+        uses: ilammy/msvc-dev-cmd@v1
+        if: runner.os == 'Windows'
+        with:
+          arch: x${{ matrix.arch.msvc }}
+
+      - name: Create build folders
+        run: |
+          mkdir build
+          cd build
+          mkdir out
+
+      - name: Generate build files (clang, gcc)
+        if: matrix.compiler.cxx == 'clang++' || matrix.compiler.cxx == 'g++'
+        run: |
+          cd build
+          cmake -DLIGHTNING_SCANNER_BUILD_TESTS=ON -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=out -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=${{ matrix.compiler.cxx }} -DCMAKE_C_COMPILER=${{ matrix.compiler.c }} -DCMAKE_CXX_FLAGS=-m${{ matrix.arch.gcc }} -DCMAKE_C_FLAGS=-m${{ matrix.arch.gcc }} -G"Ninja" ..
+
+      - name: Generate build files (msvc)
+        if: matrix.compiler.cxx == 'cl' 
+        run: |
+          cd build
+          cmake -DLIGHTNING_SCANNER_BUILD_TESTS=ON -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=out -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=${{ matrix.compiler.cxx }} -DCMAKE_C_COMPILER=${{ matrix.compiler.c }} -G"Ninja" ..
+      
+      - name: Build
+        run: |
+          cd build
+          ninja -j32
+      
+      - name: Run tests
+        run: |
+          cd build/tests
+          ctest
+
