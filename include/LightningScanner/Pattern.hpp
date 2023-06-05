@@ -71,6 +71,8 @@ struct Pattern {
             ++i;
         }
 
+        unpaddedSize = data.size();
+
         size_t count = (size_t)std::ceil((float)data.size() / Alignment);
         size_t paddingSize = count * Alignment - data.size();
 
@@ -85,6 +87,8 @@ public:
     std::vector<uint8_t, AlignedAllocator<uint8_t, Alignment>> data{};
     /** Pattern binary data mask */
     std::vector<uint8_t, AlignedAllocator<uint8_t, Alignment>> mask{};
+    /** Unpadded pattern size */
+    size_t unpaddedSize{};
 
 private:
     static uint8_t CharToByte(char symbol) {

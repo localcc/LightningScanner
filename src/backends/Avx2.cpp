@@ -7,7 +7,6 @@ ScanResult FindAvx2(const Pattern& patternData, void* startAddr, size_t size) {
     constexpr size_t UNIT_SIZE = 32;
 
     size_t processedSize = 0;
-    void* matchAddr = nullptr;
 
     __m256i pattern = _mm256_load_si256((__m256i*)patternData.data.data());
     __m256i mask = _mm256_load_si256((__m256i*)patternData.mask.data());
@@ -22,18 +21,21 @@ ScanResult FindAvx2(const Pattern& patternData, void* startAddr, size_t size) {
 
         if (_mm256_movemask_epi8(eq) == 0xffffffff) {
             processedSize += UNIT_SIZE;
-            matchAddr = (void*)((char*)startAddr + chunk);
 
-            if (processedSize != UNIT_SIZE) {
+            if (processedSize < patternData.unpaddedSize) {
                 chunk += UNIT_SIZE - 1;
                 pattern = _mm256_load_si256(
                     (__m256i*)(patternData.data.data() + processedSize));
                 mask = _mm256_load_si256(
                     (__m256i*)(patternData.mask.data() + processedSize));
             } else {
-                return ScanResult(matchAddr);
+                char* matchAddr =
+                    (char*)startAddr + chunk - processedSize + UNIT_SIZE;
+                return ScanResult((void*)matchAddr);
             }
         } else {
+            pattern = _mm256_load_si256((__m256i*)patternData.data.data());
+            mask = _mm256_load_si256((__m256i*)patternData.mask.data());
             processedSize = 0;
         }
     }

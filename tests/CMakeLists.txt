@@ -15,6 +15,10 @@ target_link_libraries(LargePattern PRIVATE GTest::gtest_main LightningScanner)
 add_executable(SmallPattern "SmallPattern.cpp")
 target_link_libraries(SmallPattern PRIVATE GTest::gtest_main LightningScanner)
 
+add_executable(SimilarPattern "SimilarPattern.cpp")
+target_link_libraries(SimilarPattern PRIVATE GTest::gtest_main LightningScanner)
+
 enable_testing()
 gtest_discover_tests(LargePattern)
 gtest_discover_tests(SmallPattern)
+gtest_discover_tests(SimilarPattern)

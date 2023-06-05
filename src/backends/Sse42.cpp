@@ -7,7 +7,6 @@ ScanResult FindSse42(const Pattern& patternData, void* startAddr, size_t size) {
     constexpr size_t UNIT_SIZE = 16;
 
     size_t processedSize = 0;
-    void* matchAddr = nullptr;
 
     __m128i pattern = _mm_load_si128((__m128i*)patternData.data.data());
     __m128i mask = _mm_load_si128((__m128i*)patternData.mask.data());
@@ -22,18 +21,21 @@ ScanResult FindSse42(const Pattern& patternData, void* startAddr, size_t size) {
 
         if (_mm_movemask_epi8(eq) == 0xffff) {
             processedSize += UNIT_SIZE;
-            matchAddr = (void*)((char*)startAddr + chunk);
 
-            if (processedSize != UNIT_SIZE) {
+            if (processedSize < patternData.unpaddedSize) {
                 chunk += UNIT_SIZE - 1;
                 pattern = _mm_load_si128(
                     (__m128i*)(patternData.data.data() + processedSize));
                 mask = _mm_load_si128(
                     (__m128i*)(patternData.mask.data() + processedSize));
             } else {
-                return ScanResult(matchAddr);
+                char* matchAddr =
+                    (char*)startAddr + chunk - processedSize + UNIT_SIZE;
+                return ScanResult((void*)matchAddr);
             }
         } else {
+            pattern = _mm_load_si128((__m128i*)patternData.data.data());
+            mask = _mm_load_si128((__m128i*)patternData.mask.data());
             processedSize = 0;
         }
     }
