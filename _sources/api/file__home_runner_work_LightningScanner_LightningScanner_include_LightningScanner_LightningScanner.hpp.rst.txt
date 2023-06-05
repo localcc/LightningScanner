@@ -1,0 +1,63 @@
+
+.. _file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp:
+
+File LightningScanner.hpp
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/LightningScanner.hpp``)
+------------------------------------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``LightningScanner/CpuInfo.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_CpuInfo.hpp`)
+
+- ``LightningScanner/Pattern.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_Pattern.hpp`)
+
+- ``LightningScanner/ScanMode.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanMode.hpp`)
+
+- ``LightningScanner/ScanResult.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp`)
+
+- ``LightningScanner/backends/Avx2.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Avx2.hpp`)
+
+- ``LightningScanner/backends/Scalar.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp`)
+
+- ``LightningScanner/backends/Sse42.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Sse42.hpp`)
+
+- ``cstdint``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_LightningScanner`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classLightningScanner_1_1Scanner`
+

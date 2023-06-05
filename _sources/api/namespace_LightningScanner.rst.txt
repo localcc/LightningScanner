@@ -1,0 +1,34 @@
+
+.. _namespace_LightningScanner:
+
+Namespace LightningScanner
+==========================
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structLightningScanner_1_1AlignedAllocator_1_1rebind`
+
+- :ref:`exhale_struct_structLightningScanner_1_1CpuInfo`
+
+- :ref:`exhale_struct_structLightningScanner_1_1Pattern`
+
+- :ref:`exhale_class_classLightningScanner_1_1AlignedAllocator`
+
+- :ref:`exhale_class_classLightningScanner_1_1Scanner`
+
+- :ref:`exhale_class_classLightningScanner_1_1ScanResult`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_Avx2_8hpp_1adefc7e7e854d228955b8ee844d1d8d6f`
+
+- :ref:`exhale_function_Scalar_8hpp_1a369c2061275480d50ec15632cfc5e193`
+
+- :ref:`exhale_function_Sse42_8hpp_1ad1108528070d7402171ae16362cdcd3c`

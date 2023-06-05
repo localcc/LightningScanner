@@ -1,0 +1,57 @@
+
+.. _file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp:
+
+File Scalar.hpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/backends``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/backends/Scalar.hpp``)
+-----------------------------------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``LightningScanner/Pattern.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_Pattern.hpp`)
+
+- ``LightningScanner/ScanResult.hpp`` (:ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_LightningScanner`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_Scalar_8hpp_1a369c2061275480d50ec15632cfc5e193`
+

@@ -1,0 +1,27 @@
+.. _exhale_class_classLightningScanner_1_1AlignedAllocator:
+
+Template Class AlignedAllocator
+===============================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structLightningScanner_1_1AlignedAllocator_1_1rebind`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: LightningScanner::AlignedAllocator
+   :project: LightningScanner
+   :members:
+   :undoc-members:
+   :private-members:

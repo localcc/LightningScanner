@@ -1,0 +1,17 @@
+.. _exhale_class_classLightningScanner_1_1Scanner:
+
+Template Class Scanner
+======================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: LightningScanner::Scanner
+   :project: LightningScanner
+   :members:
+   :undoc-members:
+   :private-members:

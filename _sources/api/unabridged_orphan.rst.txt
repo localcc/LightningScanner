@@ -1,0 +1,78 @@
+:orphan:
+
+
+Full API
+========
+
+Directories
+***********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   dir__home_runner_work_LightningScanner_LightningScanner_include.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends.rst
+
+Files
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Avx2.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_CpuInfo.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_Pattern.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanMode.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Sse42.hpp.rst

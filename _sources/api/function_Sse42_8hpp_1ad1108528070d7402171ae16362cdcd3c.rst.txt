@@ -1,0 +1,14 @@
+.. _exhale_function_Sse42_8hpp_1ad1108528070d7402171ae16362cdcd3c:
+
+Function LightningScanner::FindSse42
+====================================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Sse42.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: LightningScanner::FindSse42(const Pattern&, void *, size_t)
+   :project: LightningScanner

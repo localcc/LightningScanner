@@ -1,0 +1,19 @@
+
+.. _program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanMode.hpp:
+
+Program Listing for File ScanMode.hpp
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanMode.hpp>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/ScanMode.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   enum class ScanMode {
+       Scalar,
+       Sse42,
+       Avx2,
+   };

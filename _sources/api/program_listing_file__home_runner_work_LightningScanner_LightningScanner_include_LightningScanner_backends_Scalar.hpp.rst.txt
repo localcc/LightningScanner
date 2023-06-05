@@ -1,0 +1,22 @@
+
+.. _program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp:
+
+Program Listing for File Scalar.hpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/backends/Scalar.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <LightningScanner/Pattern.hpp>
+   #include <LightningScanner/ScanResult.hpp>
+   #include <vector>
+   
+   namespace LightningScanner {
+   
+   ScanResult FindScalar(const Pattern& data, void* startAddr, size_t size);
+   
+   } // namespace LightningScanner

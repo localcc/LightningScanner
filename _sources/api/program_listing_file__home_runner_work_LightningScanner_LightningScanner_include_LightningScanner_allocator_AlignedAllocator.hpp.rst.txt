@@ -1,0 +1,56 @@
+
+.. _program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp:
+
+Program Listing for File AlignedAllocator.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/allocator/AlignedAllocator.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <cstddef>
+   #include <limits>
+   #include <new>
+   
+   namespace LightningScanner {
+   
+   // clang-format off
+   // clang-format on
+   template <typename T, size_t Alignment>
+   class AlignedAllocator {
+   public:
+       typedef T value_type;
+   
+       AlignedAllocator() = default;
+   
+       template <typename U>
+       constexpr AlignedAllocator(const AlignedAllocator<U, Alignment>&) noexcept {
+       }
+   
+       template <typename U>
+       struct rebind {
+           typedef AlignedAllocator<U, Alignment> other;
+       };
+   
+       T* allocate(size_t n) {
+           if (n > std::numeric_limits<size_t>::max() / sizeof(T))
+               throw std::bad_array_new_length();
+   
+           auto const bytesToAllocate = n * sizeof(T);
+           // clang-format off
+           return (T*)(::operator new[](bytesToAllocate, std::align_val_t(Alignment)));
+           // clang-format on
+       }
+   
+       void deallocate(T* data, size_t n) noexcept {
+           ::operator delete[](data, std::align_val_t(Alignment));
+       }
+   
+       bool operator==(const AlignedAllocator&) { return true; }
+       bool operator!=(const AlignedAllocator&) { return false; }
+   };
+   
+   } // namespace LightningScanner

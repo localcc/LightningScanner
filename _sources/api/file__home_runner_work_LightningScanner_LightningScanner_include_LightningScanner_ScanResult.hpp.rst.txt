@@ -1,0 +1,53 @@
+
+.. _file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp:
+
+File ScanResult.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/ScanResult.hpp``)
+------------------------------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Avx2.hpp`
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp`
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Sse42.hpp`
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_LightningScanner`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classLightningScanner_1_1ScanResult`
+

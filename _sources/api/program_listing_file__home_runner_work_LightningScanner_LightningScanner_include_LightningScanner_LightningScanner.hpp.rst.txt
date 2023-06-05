@@ -1,0 +1,55 @@
+
+.. _program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp:
+
+Program Listing for File LightningScanner.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_LightningScanner.hpp>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/LightningScanner.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <cstdint>
+   #include <vector>
+   
+   #include <LightningScanner/Pattern.hpp>
+   #include <LightningScanner/ScanMode.hpp>
+   #include <LightningScanner/ScanResult.hpp>
+   
+   #include <LightningScanner/CpuInfo.hpp>
+   #include <LightningScanner/backends/Avx2.hpp>
+   #include <LightningScanner/backends/Scalar.hpp>
+   #include <LightningScanner/backends/Sse42.hpp>
+   
+   namespace LightningScanner {
+   
+   template <ScanMode PreferredMode = ScanMode::Avx2>
+   class Scanner {
+   public:
+       Scanner(Pattern pattern) : m_Pattern(pattern) {}
+   
+       ScanResult Find(void* startAddr, size_t size) const {
+           const CpuInfo& cpuInfo = CpuInfo::GetCpuInfo();
+   
+           if (PreferredMode == ScanMode::Avx2 && cpuInfo.avx2Supported)
+               return FindAvx2(m_Pattern, startAddr, size);
+           else if (PreferredMode == ScanMode::Sse42 && cpuInfo.sse42Supported)
+               return FindSse42(m_Pattern, startAddr, size);
+           else if (PreferredMode == ScanMode::Scalar)
+               return FindScalar(m_Pattern, startAddr, size);
+   
+           if (cpuInfo.avx2Supported)
+               return FindAvx2(m_Pattern, startAddr, size);
+           else if (cpuInfo.sse42Supported)
+               return FindSse42(m_Pattern, startAddr, size);
+   
+           return FindScalar(m_Pattern, startAddr, size);
+       }
+   
+   private:
+       Pattern m_Pattern;
+   };
+   
+   } // namespace LightningScanner

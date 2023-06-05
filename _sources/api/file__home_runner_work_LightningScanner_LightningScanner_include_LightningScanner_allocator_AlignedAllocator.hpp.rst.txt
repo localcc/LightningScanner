@@ -1,0 +1,59 @@
+
+.. _file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp:
+
+File AlignedAllocator.hpp
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/allocator``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+Definition (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/allocator/AlignedAllocator.hpp``)
+----------------------------------------------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstddef``
+
+- ``limits``
+
+- ``new``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_Pattern.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_LightningScanner`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structLightningScanner_1_1AlignedAllocator_1_1rebind`
+
+- :ref:`exhale_class_classLightningScanner_1_1AlignedAllocator`
+

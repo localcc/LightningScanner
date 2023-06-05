@@ -1,0 +1,14 @@
+.. _exhale_function_Avx2_8hpp_1adefc7e7e854d228955b8ee844d1d8d6f:
+
+Function LightningScanner::FindAvx2
+===================================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Avx2.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: LightningScanner::FindAvx2(const Pattern&, void *, size_t)
+   :project: LightningScanner

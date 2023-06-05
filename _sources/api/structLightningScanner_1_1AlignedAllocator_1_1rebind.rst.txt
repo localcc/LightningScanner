@@ -1,0 +1,23 @@
+.. _exhale_struct_structLightningScanner_1_1AlignedAllocator_1_1rebind:
+
+Template Struct AlignedAllocator::rebind
+========================================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classLightningScanner_1_1AlignedAllocator`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: LightningScanner::AlignedAllocator::rebind
+   :project: LightningScanner
+   :members:
+   :undoc-members:
+   :private-members:
