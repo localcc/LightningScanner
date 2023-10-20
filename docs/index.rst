@@ -12,7 +12,7 @@ Here's an example of how to find an IDA-style memory pattern inside of a binary.
 
 .. code-block:: cpp
 
-	#include <LightningScanner/Scanner.hpp>
+	#include <LightningScanner/LightningScanner.hpp>
 
 	using namespace LightningScanner;
 

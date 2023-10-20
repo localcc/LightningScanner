@@ -18,7 +18,7 @@ Code examples
 
 .. code-block:: cpp
 
-	#include <LightningScanner/Scanner.hpp>
+	#include <LightningScanner/LightningScanner.hpp>
 
 	using namespace LightningScanner;
 

@@ -7,7 +7,7 @@ A lightning-fast memory pattern scanner, capable of scanning gigabytes of data p
 Here's an example of how to find an IDA-style memory pattern inside of a binary.
 
 ```cpp
-#include <LightningScanner/Scanner.hpp>
+#include <LightningScanner/LightningScanner.hpp>
 
 using namespace LightningScanner;
 
