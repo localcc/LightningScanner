@@ -18,7 +18,7 @@ if (MSVC)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
-add_library(LightningScanner  "bench/LightningBench.cpp" "include/LightningScanner/LightningScanner.hpp" "include/LightningScanner/backends/Avx2.hpp" "include/LightningScanner/Pattern.hpp" "src/backends/Avx2.cpp" "src/CpuInfo.cpp" "src/backends/Sse42.cpp" "include/LightningScanner/allocator/AlignedAllocator.hpp" "src/backends/Scalar.cpp")
+add_library(LightningScanner "include/LightningScanner/LightningScanner.hpp" "include/LightningScanner/backends/Avx2.hpp" "include/LightningScanner/Pattern.hpp" "src/backends/Avx2.cpp" "src/CpuInfo.cpp" "src/backends/Sse42.cpp" "include/LightningScanner/allocator/AlignedAllocator.hpp" "src/backends/Scalar.cpp")
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	set_source_files_properties("src/backends/Avx2.cpp" PROPERTIES COMPILE_FLAGS /arch:AVX2)
