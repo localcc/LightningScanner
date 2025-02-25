@@ -12,4 +12,6 @@ enum class ScanMode {
     Sse42,
     /** Scan mode that uses AVX2 SIMD instructions */
     Avx2,
+    /** Scan mode that uses std::find */
+    StdFind
 };

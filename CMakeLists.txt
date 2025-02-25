@@ -22,7 +22,8 @@ add_library(LightningScanner "include/LightningScanner/LightningScanner.hpp"
         "include/LightningScanner/Pattern.hpp"
         "src/CpuInfo.cpp"
         "include/LightningScanner/allocator/AlignedAllocator.hpp"
-        "src/backends/Scalar.cpp")
+        "src/backends/Scalar.cpp"
+        "src/backends/StdFind.cpp")
 
 if (NOT CMAKE_SYSTEM_PROCESSOR STREQUAL "arm64")
     target_sources(LightningScanner PRIVATE
