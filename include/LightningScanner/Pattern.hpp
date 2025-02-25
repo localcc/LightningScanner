@@ -23,7 +23,8 @@ struct Pattern {
      *
      * \tparam Len pattern string length.
      *
-     * \param pattern pattern string.
+     * \param pattern pattern string. The first byte of the pattern string must
+     * not be a wildcard.
      */
     template <size_t Len>
     constexpr Pattern(const char (&pattern)[Len]) : Pattern(pattern, Len - 1) {}
@@ -31,7 +32,8 @@ struct Pattern {
     /**
      * Create a new Pattern instance from a `string_view`
      *
-     * \param pattern pattern string.
+     * \param pattern pattern string. The first byte of the pattern string must
+     * not be a wildcard.
      */
     Pattern(const std::string_view pattern)
         : Pattern(pattern.data(), pattern.size()) {}
@@ -39,7 +41,8 @@ struct Pattern {
     /**
      * Create a new Pattern instance from a c-string and its length
      *
-     * \param pattern pattern string.
+     * \param pattern pattern string. The first byte of the pattern string must
+     * not be a wildcard.
      * \param len pattern string length.
      */
     Pattern(const char* pattern, const size_t len) {

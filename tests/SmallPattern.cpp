@@ -39,6 +39,15 @@ TEST(SmallPattern, Sse42) {
     ASSERT_EQ(offset, 0x24);
 }
 
+TEST(SmallPattern, StdFind) {
+    const Scanner<ScanMode::StdFind> scanner("a0 9e 87 00 ?? 5c");
+    const uint8_t* pointer =
+        scanner.Find((void*)dataSet, dataSetSize).Get<uint8_t>();
+    const size_t offset = ((uint64_t)pointer - (uint64_t)dataSet);
+
+    ASSERT_EQ(offset, 0x24);
+}
+
 TEST(SmallPattern, Scalar) {
     const Scanner<ScanMode::Scalar> scanner("a0 9e 87 00 ?? 5c");
     const uint8_t* pointer =

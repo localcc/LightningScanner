@@ -15,6 +15,9 @@ std::ostream& operator<<(std::ostream& os, const ScanMode& mode) {
     case ScanMode::Sse42:
         os << "SSE4.2";
         break;
+    case ScanMode::StdFind:
+        os << "StdFind";
+        break;
     case ScanMode::Scalar:
         os << "Scalar";
         break;
@@ -63,6 +66,10 @@ int main() {
         "48 89 5c 24 ?? 48 89 6c 24 ?? 48 89 74 24 ?? 48 89 7c 24 ?? 41 56 41 "
         "57 4c 8b 79 38 aa bf cd");
     Bench<ScanMode::Sse42>(
+        largeBinary.data(), largeBinary.size(),
+        "48 89 5c 24 ?? 48 89 6c 24 ?? 48 89 74 24 ?? 48 89 7c 24 ?? 41 56 41 "
+        "57 4c 8b 79 38 aa bf cd");
+    Bench<ScanMode::StdFind>(
         largeBinary.data(), largeBinary.size(),
         "48 89 5c 24 ?? 48 89 6c 24 ?? 48 89 74 24 ?? 48 89 7c 24 ?? 41 56 41 "
         "57 4c 8b 79 38 aa bf cd");

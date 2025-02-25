@@ -7,6 +7,7 @@
 #include <LightningScanner/ScanResult.hpp>
 
 #include <LightningScanner/backends/Scalar.hpp>
+#include <LightningScanner/backends/StdFind.hpp>
 
 #if !defined(__aarch64__)
 #include <LightningScanner/CpuInfo.hpp>
@@ -75,6 +76,8 @@ private:
             return FindAvx2(m_Pattern, startAddr, size);
         else if (PreferredMode == ScanMode::Sse42 && cpuInfo.sse42Supported)
             return FindSse42(m_Pattern, startAddr, size);
+        else if (PreferredMode == ScanMode::StdFind)
+            return FindStdFind(m_Pattern, startAddr, size);
         else if (PreferredMode == ScanMode::Scalar)
             return FindScalar(m_Pattern, startAddr, size);
 
@@ -87,6 +90,9 @@ private:
     }
 #else
     ScanResult FindAArch64(void* startAddr, size_t size) const {
+        if (PreferredMode == ScanMode::StdFind)
+            return FindStdFind(m_Pattern, startAddr, size);
+
         return FindScalar(m_Pattern, startAddr, size);
     }
 #endif

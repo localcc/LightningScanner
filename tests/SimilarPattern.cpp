@@ -53,6 +53,18 @@ TEST(SimilarPattern, Sse42) {
     ASSERT_EQ(offset, 0x24);
 }
 
+TEST(SimilarPattern, StdFind) {
+    const Scanner<ScanMode::StdFind> scanner(
+        "40 57 48 83 EC ? 48 C7 44 24 ? ? ? ? ? 48 89 5C 24 ? 48 89 6C 24 ? 48 "
+        "89 74 24 ? 49 8B E9 48 8B F2");
+
+    const uint8_t* pointer =
+        scanner.Find((void*)dataSet, dataSetSize).Get<uint8_t>();
+    const size_t offset = ((uint64_t)pointer - (uint64_t)dataSet);
+
+    ASSERT_EQ(offset, 0x24);
+}
+
 TEST(SimilarPattern, Scalar) {
     const Scanner<ScanMode::Scalar> scanner(
         "40 57 48 83 EC ? 48 C7 44 24 ? ? ? ? ? 48 89 5C 24 ? 48 89 6C 24 ? 48 "
