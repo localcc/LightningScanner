@@ -54,7 +54,7 @@ if (LIGHTNING_SCANNER_BUILD_DOCS)
     add_subdirectory("docs")
 endif ()
 
-option(LIGHTNING_SCANNER_BUILD_TESTS "Build Tests" ON)
+option(LIGHTNING_SCANNER_BUILD_TESTS "Build Tests" OFF)
 if (LIGHTNING_SCANNER_BUILD_TESTS)
     add_subdirectory("tests")
 endif ()
