@@ -6,10 +6,13 @@
 #include <LightningScanner/ScanMode.hpp>
 #include <LightningScanner/ScanResult.hpp>
 
+#include <LightningScanner/backends/Scalar.hpp>
+
+#if !defined(__aarch64__)
 #include <LightningScanner/CpuInfo.hpp>
 #include <LightningScanner/backends/Avx2.hpp>
-#include <LightningScanner/backends/Scalar.hpp>
 #include <LightningScanner/backends/Sse42.hpp>
+#endif
 
 namespace LightningScanner {
 
@@ -56,6 +59,16 @@ public:
      * \endcode
      */
     ScanResult Find(void* startAddr, size_t size) const {
+#if !defined(__aarch64__)
+        return FindAMD64(startAddr, size);
+#else
+        return FindAArch64(startAddr, size);
+#endif
+    }
+
+private:
+#if !defined(__aarch64__)
+    ScanResult FindAMD64(void* startAddr, size_t size) const {
         const CpuInfo& cpuInfo = CpuInfo::GetCpuInfo();
 
         if (PreferredMode == ScanMode::Avx2 && cpuInfo.avx2Supported)
@@ -72,6 +85,11 @@ public:
 
         return FindScalar(m_Pattern, startAddr, size);
     }
+#else
+    ScanResult FindAArch64(void* startAddr, size_t size) const {
+        return FindScalar(m_Pattern, startAddr, size);
+    }
+#endif
 
 private:
     Pattern m_Pattern;

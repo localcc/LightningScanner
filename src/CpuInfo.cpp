@@ -7,13 +7,16 @@ namespace LightningScanner {
 #include <intrin.h>
 #define cpuid(info, x) __cpuidex(info, x, 0)
 #else
+#if !defined(__aarch64__)
 #include <cpuid.h>
 void cpuid(int info[4], int infoType) {
     __cpuid_count(infoType, 0, info[0], info[1], info[2], info[3]);
 }
 #endif
+#endif
 
 CpuInfo::CpuInfo() {
+#if !defined(__aarch64__)
     int32_t info[4];
     cpuid(info, 0);
     int32_t idsAmount = info[0];
@@ -35,6 +38,7 @@ CpuInfo::CpuInfo() {
 
         avx2Supported = cpuInfo[1] & AVX2_MASK;
     }
+#endif
 }
 
 const CpuInfo& CpuInfo::GetCpuInfo() {
