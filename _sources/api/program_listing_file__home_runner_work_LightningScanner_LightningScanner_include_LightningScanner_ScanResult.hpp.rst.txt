@@ -1,0 +1,30 @@
+
+.. _program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp:
+
+Program Listing for File ScanResult.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanResult.hpp>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/ScanResult.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   namespace LightningScanner {
+   
+   class ScanResult {
+   public:
+       explicit ScanResult(void* addr) : m_Addr(addr) {}
+   
+       template <typename T>
+       T* Get(size_t offset = 0) {
+           return (T*)((char*)m_Addr + offset);
+       }
+   
+   private:
+       void* m_Addr;
+   };
+   
+   } // namespace LightningScanner

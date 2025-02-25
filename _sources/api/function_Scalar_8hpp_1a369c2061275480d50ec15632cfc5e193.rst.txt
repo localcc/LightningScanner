@@ -1,0 +1,14 @@
+.. _exhale_function_Scalar_8hpp_1a369c2061275480d50ec15632cfc5e193:
+
+Function LightningScanner::FindScalar
+=====================================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_Scalar.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: LightningScanner::FindScalar(const Pattern&, void *, size_t)
+   :project: LightningScanner

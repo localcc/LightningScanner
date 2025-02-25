@@ -1,0 +1,17 @@
+.. _exhale_struct_structLightningScanner_1_1CpuInfo:
+
+Struct CpuInfo
+==============
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_CpuInfo.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: LightningScanner::CpuInfo
+   :project: LightningScanner
+   :members:
+   :undoc-members:
+   :private-members:

@@ -1,0 +1,89 @@
+
+.. _program_listing_file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_Pattern.hpp:
+
+Program Listing for File Pattern.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_Pattern.hpp>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/Pattern.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <LightningScanner/allocator/AlignedAllocator.hpp>
+   #include <cmath>
+   #include <cstdint>
+   #include <string_view>
+   #include <vector>
+   
+   namespace LightningScanner {
+   
+   struct Pattern {
+       static constexpr size_t Alignment = 32;
+   
+       template <size_t Len>
+       constexpr Pattern(const char (&pattern)[Len]) : Pattern(pattern, Len - 1) {}
+   
+       Pattern(const std::string_view pattern)
+           : Pattern(pattern.data(), pattern.size()) {}
+   
+       Pattern(const char* pattern, const size_t len) {
+           size_t byteIndex = 0;
+   
+           for (size_t i = 0; i < len; i++) {
+               char symbol = pattern[i];
+               char nextSymbol = ((i + 1) < len) ? pattern[i + 1] : 0;
+               if (symbol == ' ')
+                   continue;
+   
+               if (symbol == '?') {
+                   data.push_back(0x00);
+                   mask.push_back(0x00);
+   
+                   if (nextSymbol == '?') {
+                       ++i;
+                   }
+   
+                   ++byteIndex;
+                   continue;
+               }
+   
+               uint8_t byte = CharToByte(symbol) << 4 | CharToByte(nextSymbol);
+   
+               data.push_back(byte);
+               mask.push_back(0xff);
+   
+               ++i;
+           }
+   
+           unpaddedSize = data.size();
+   
+           size_t count = (size_t)std::ceil((float)data.size() / Alignment);
+           size_t paddingSize = count * Alignment - data.size();
+   
+           for (size_t i = 0; i < paddingSize; i++) {
+               data.push_back(0x00);
+               mask.push_back(0x00);
+           }
+       }
+   
+   public:
+       std::vector<uint8_t, AlignedAllocator<uint8_t, Alignment>> data{};
+       std::vector<uint8_t, AlignedAllocator<uint8_t, Alignment>> mask{};
+       size_t unpaddedSize{};
+   
+   private:
+       static uint8_t CharToByte(char symbol) {
+           if (symbol >= 'a' && symbol <= 'z')
+               return symbol - 'a' + 0xA;
+           else if (symbol >= 'A' && symbol <= 'Z')
+               return symbol - 'A' + 0xA;
+           else if (symbol >= '0' && symbol <= '9')
+               return symbol - '0';
+           else
+               return 0;
+       }
+   };
+   
+   } // namespace LightningScanner

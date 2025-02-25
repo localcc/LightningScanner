@@ -1,0 +1,14 @@
+.. _exhale_function_StdFind_8hpp_1ab6e13477c536553e08d80a2511bb3117:
+
+Function LightningScanner::FindStdFind
+======================================
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_backends_StdFind.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: LightningScanner::FindStdFind(const Pattern&, void *, size_t)
+   :project: LightningScanner

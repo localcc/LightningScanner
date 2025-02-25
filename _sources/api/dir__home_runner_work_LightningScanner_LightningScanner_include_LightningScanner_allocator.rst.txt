@@ -1,0 +1,21 @@
+.. _dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator:
+
+
+Directory allocator
+===================
+
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner>` (``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``/home/runner/work/LightningScanner/LightningScanner/include/LightningScanner/allocator``
+
+
+Files
+-----
+
+- :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_allocator_AlignedAllocator.hpp`
+
+

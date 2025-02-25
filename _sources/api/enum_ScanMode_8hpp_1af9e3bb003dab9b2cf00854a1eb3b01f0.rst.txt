@@ -1,0 +1,14 @@
+.. _exhale_enum_ScanMode_8hpp_1af9e3bb003dab9b2cf00854a1eb3b01f0:
+
+Enum ScanMode
+=============
+
+- Defined in :ref:`file__home_runner_work_LightningScanner_LightningScanner_include_LightningScanner_ScanMode.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ScanMode
+   :project: LightningScanner
